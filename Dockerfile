@@ -11,5 +11,5 @@ RUN apt-get update && apt-get upgrade -y && apt-get install --no-install-recomme
 RUN useradd --create-home -s /bin/bash wine_user
 WORKDIR /home/wine_user
 USER wine_user
-RUN winetricks --unattended nocrashdialog
-RUN winetricks --unattended dotnet472
+RUN winetricks --unattended nocrashdialog && wineserver -w
+RUN winetricks --unattended dotnet472 && wineserver -w
