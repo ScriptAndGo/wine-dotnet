@@ -1,7 +1,7 @@
 FROM debian:buster
 RUN dpkg --add-architecture i386
 RUN sed -i 's/ main/ main contrib/' /etc/apt/sources.list
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y \
     wine32 \
     ca-certificates \
     winetricks \
